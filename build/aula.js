@@ -1,6 +1,12 @@
 "use strict";
-let nome;
-nome = 'Fellipe';
-nome = 'João';
-let valor;
-valor = 1;
+let cursos = ['Javascript', 'Typescript', 'React'];
+cursos.push('Node');
+console.log(cursos);
+let valores = [10, 20, 30];
+valores.push(40);
+console.log(valores);
+let teste;
+teste = 'Fellipe';
+teste = 10;
+teste = cursos;
+console.log(teste);
