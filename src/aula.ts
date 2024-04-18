@@ -1,14 +1,13 @@
-let cursos: string[] = ['Javascript', 'Typescript', 'React']
-cursos.push('Node')
-console.log(cursos)
+let numeros: number[] = [10, 20, 30, 40]
+// let numeros: Array<number|string> = [10, 'Pedro', 30, 40, 'João']
+// let numeros: (number|string)[] = [10, 'Pedro', 30, 40, 'João']
 
-let valores: number[] = [10, 20, 30]
-valores.push(40)
-console.log(valores)
+numeros.push(50) // final do array
+numeros.unshift(100) // começo do array
+numeros.pop() // retira o ultimo valor do array
+numeros.shift() //retira o primeiro valor do array
 
-// let teste: string | number
-let teste: any
-teste = 'Fellipe'
-teste = 10
-teste = cursos
-console.log(teste)
+console.log(numeros)
+
+let numerosRo: ReadonlyArray<number> = [100, 200, 300] // array que so aceita leitura, não pode ser modificado
+console.log(numerosRo)
