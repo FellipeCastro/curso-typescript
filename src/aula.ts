@@ -1,13 +1,9 @@
-let numeros: number[] = [10, 20, 30, 40]
-// let numeros: Array<number|string> = [10, 'Pedro', 30, 40, 'João']
-// let numeros: (number|string)[] = [10, 'Pedro', 30, 40, 'João']
+let coisas: [string, number, boolean] = ['Fellipe', 16, true]
 
-numeros.push(50) // final do array
-numeros.unshift(100) // começo do array
-numeros.pop() // retira o ultimo valor do array
-numeros.shift() //retira o primeiro valor do array
+// não é possível acessar esse novos valores
+coisas.push('João', 18, false)
 
-console.log(numeros)
+coisas[2] = false
 
-let numerosRo: ReadonlyArray<number> = [100, 200, 300] // array que so aceita leitura, não pode ser modificado
-console.log(numerosRo)
+console.log(coisas)
+console.log(coisas[2])
