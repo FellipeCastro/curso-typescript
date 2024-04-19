@@ -1,9 +1,14 @@
-let coisas: [string, number, boolean] = ['Fellipe', 16, true]
+let dados = {
+    nome: 'Fellipe',
+    idade: 16,
+    status: 'A',
+    ola: () => {console.log('Olá Mundo')},
+    info: (nome: string) => {console.log(nome)}
+}
 
-// não é possível acessar esse novos valores
-coisas.push('João', 18, false)
+console.log(typeof(dados))
+console.log(dados)
+console.log(dados.nome)
 
-coisas[2] = false
-
-console.log(coisas)
-console.log(coisas[2])
+dados.ola()
+dados.info(dados.nome)
