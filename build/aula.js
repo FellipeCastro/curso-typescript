@@ -1,10 +1,16 @@
 "use strict";
-function soma(n1 = 0, n2 = 0) {
-    return n1 + n2;
-}
-console.log(soma());
-function novoUser(user, password, name) {
-    let dados = { user, password, name };
-    console.log(dados);
-}
-novoUser('fellipe_123', '1234');
+const teste = (text) => {
+    console.log(text);
+};
+teste('Olá Mundo');
+teste('Hello World');
+teste();
+const soma = (n) => {
+    let somar = 0;
+    n.forEach((e) => {
+        somar += e;
+    });
+    return somar;
+};
+let numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+console.log(soma(numeros));
