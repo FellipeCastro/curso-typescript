@@ -1,29 +1,18 @@
-let valorNumber: number
-let valorString: string
-let valorUnknown: unknown
+function logar(user: string, password: string): void { // função não retorna nada: void
+    console.log(`Usuário: ${user}`)
+    console.log(`Senha: ${password}`)
+}
 
-valorUnknown = 10
-valorString = '20'
-valorNumber= 10
+logar('Fellipe', '1234')
 
-valorString = valorNumber.toString()
+function soma(n1: number, n2: number): number { // retorna number
+    let res = n1 + n2
+    
+    return res
+}
 
-console.log(typeof(valorString))
-console.log(valorString)
+const respostaNumber: number = soma(1, 2)
+const respostaString: string = soma(3, 9).toString()
 
-// valorNumber = Number.parseInt(valorString)
-
-// valorNumber = <number><unknown>valorString
-
-// afirmando o tipo
-// valorNumber = <number>valorUnknown
-// valorString = <string>valorUnknown
-
-// console.log(typeof(valorUnknown))
-// console.log(valorUnknown)
-
-// console.log(typeof(valorNumber))
-// console.log(valorNumber)
-
-// console.log(typeof(valorString))
-// console.log(valorString)
+console.log(respostaNumber)
+console.log(respostaString)
