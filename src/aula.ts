@@ -1,14 +1,29 @@
-// null = nulo != vazio
-let nome: string|null
-nome = null
-console.log(nome)
+let valorNumber: number
+let valorString: string
+let valorUnknown: unknown
 
-// undefined = indefinido/não tem valor
-let nome2
-console.log(nome2)
+valorUnknown = 10
+valorString = '20'
+valorNumber= 10
 
-// unknown = desconhecido/pode receber qualquer valor. So pode ser atribuido em tipos unknown ou any 
-let nome3: unknown = 1
-// let num: number = nome3 // erro pois num e di tipo number
-let num: any = nome3
-console.log(nome3)
+valorString = valorNumber.toString()
+
+console.log(typeof(valorString))
+console.log(valorString)
+
+// valorNumber = Number.parseInt(valorString)
+
+// valorNumber = <number><unknown>valorString
+
+// afirmando o tipo
+// valorNumber = <number>valorUnknown
+// valorString = <string>valorUnknown
+
+// console.log(typeof(valorUnknown))
+// console.log(valorUnknown)
+
+// console.log(typeof(valorNumber))
+// console.log(valorNumber)
+
+// console.log(typeof(valorString))
+// console.log(valorString)

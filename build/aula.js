@@ -1,9 +1,10 @@
 "use strict";
-let nome;
-nome = null;
-console.log(nome);
-let nome2;
-console.log(nome2);
-let nome3 = 1;
-let num = nome3;
-console.log(nome3);
+let valorNumber;
+let valorString;
+let valorUnknown;
+valorUnknown = 10;
+valorString = '20';
+valorNumber = 10;
+valorString = valorNumber.toString();
+console.log(typeof (valorString));
+console.log(valorString);
