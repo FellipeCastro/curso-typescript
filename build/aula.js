@@ -1,14 +1,10 @@
 "use strict";
-function logar(user, password) {
-    console.log(`Usuário: ${user}`);
-    console.log(`Senha: ${password}`);
+function soma(n1 = 0, n2 = 0) {
+    return n1 + n2;
 }
-logar('Fellipe', '1234');
-function soma(n1, n2) {
-    let res = n1 + n2;
-    return res;
+console.log(soma());
+function novoUser(user, password, name) {
+    let dados = { user, password, name };
+    console.log(dados);
 }
-const respostaNumber = soma(1, 2);
-const respostaString = soma(3, 9).toString();
-console.log(respostaNumber);
-console.log(respostaString);
+novoUser('fellipe_123', '1234');

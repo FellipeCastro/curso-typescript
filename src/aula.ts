@@ -1,18 +1,13 @@
-function logar(user: string, password: string): void { // função não retorna nada: void
-    console.log(`Usuário: ${user}`)
-    console.log(`Senha: ${password}`)
+function soma(n1: number = 0, n2: number = 0): number { // valores padrão: = X
+    return n1 + n2
 }
 
-logar('Fellipe', '1234')
+console.log(soma())
 
-function soma(n1: number, n2: number): number { // retorna number
-    let res = n1 + n2
-    
-    return res
+function novoUser(user: string, password: string, name? : string): void { // valor opcional: ?
+    let dados = {user, password, name}
+
+    console.log(dados)
 }
 
-const respostaNumber: number = soma(1, 2)
-const respostaString: string = soma(3, 9).toString()
-
-console.log(respostaNumber)
-console.log(respostaString)
+novoUser('fellipe_123', '1234')
