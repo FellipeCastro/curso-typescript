@@ -1,8 +1,8 @@
-class Computador{
+class Computador {
     nome: string
-    ram: number
-    cpu: number
-    ligado: boolean
+    private ram: number // propriedade privada/não pode ser modificada fora da classe
+    private cpu: number // propriedade privada/não pode ser modificada fora da classe
+    protected ligado: boolean // propriedade não pode ser modificada fora da classe, apenas por classes filhas
 
     // Método(função de uma classe) que será chamado sempre que a classe for instanciada
     constructor(nome: string, ram: number, cpu: number) {
@@ -10,7 +10,6 @@ class Computador{
         this.ram = ram
         this.cpu = cpu
         this.ligado = false
-        console.log('Novo computador criado')
     }
 
     info(): void {
@@ -28,6 +27,22 @@ class Computador{
     desligar(): void {
         this.ligado = false
     }
+
+    upgradeRam(valor: number): void {
+        if (valor >= 0 && valor <= 1000) {
+            this.ram = valor
+        } else {
+            console.log('Valor de memória RAM inválido')
+        }
+    }
+
+    upgradeCpu(valor: number): void {
+        if (valor >= 0 && valor <= 1000) {
+            this.cpu = valor
+        } else {
+            console.log('Valor de CPU inválido')
+        }
+    }
 }
 
 // Instanciar/criar objeto da classe
@@ -39,6 +54,8 @@ comp1.ligar()
 comp3.ligar()
 
 comp3.desligar()
+
+comp2.upgradeRam(64)
 
 comp1.info()
 comp2.info()
