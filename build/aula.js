@@ -19,10 +19,18 @@ class Conta {
         return this.saldoConta;
     }
     deposito(valor) {
-        this.saldoConta += valor;
+        if (valor < 0) {
+            console.log('Valor inválido');
+        }
+        else {
+            this.saldoConta += valor;
+        }
     }
     saque(valor) {
-        if (valor >= this.saldoConta) {
+        if (valor < 0) {
+            console.log('Valor inválido');
+        }
+        else if (valor <= this.saldoConta) {
             this.saldoConta -= valor;
         }
         else {
@@ -50,6 +58,14 @@ class ContaPF extends Conta {
             console.log('Valor de deposito muito alto para uma conta PF');
         }
     }
+    saque(valor) {
+        if (valor <= 1000) {
+            super.saque(valor);
+        }
+        else {
+            console.log('Valor de saque muito alto para uma conta PF');
+        }
+    }
 }
 class ContaPJ extends Conta {
     CNPJ;
@@ -71,10 +87,18 @@ class ContaPJ extends Conta {
             console.log('Valor de deposito muito alto para uma conta PJ');
         }
     }
+    saque(valor) {
+        if (valor <= 10000) {
+            super.saque(valor);
+        }
+        else {
+            console.log('Valor de saque muito alto para uma conta PJ');
+        }
+    }
 }
 const conta01 = new ContaPF('Fellipe', 12345678900);
 const conta02 = new ContaPJ('João', 12345678900);
-conta01.deposito(1000);
+conta01.deposito(700);
 console.log(conta01.saldo());
-conta02.deposito(10001);
-console.log(conta02.saldo());
+conta01.saque(700);
+console.log(conta01.saldo());
