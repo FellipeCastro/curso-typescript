@@ -1,10 +1,10 @@
 // herança é uma classe que herda caracteristicas de outras 
 
-// Setter = setar parametros
+// Setter = alterar valores
 // Getter = obter valor
 
-class Conta {
-    protected numero: number // permitir acesso a classes filhas
+abstract class Conta { // classe abstrata, não e possivel instanciar um objeto da classe conta, apenas contaPF ou contaPj. É uma classe base para outras
+    private readonly numero: number // alteração não permitida, apenas leitura
     protected titular: string // permitir acesso a classes filhas
     private saldoConta: number
 
