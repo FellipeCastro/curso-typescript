@@ -1,5 +1,8 @@
 // herança é uma classe que herda caracteristicas de outras 
 
+// Setter = setar parametros
+// Getter = obter valor
+
 class Conta {
     protected numero: number // permitir acesso a classes filhas
     protected titular: string // permitir acesso a classes filhas
@@ -20,8 +23,12 @@ class Conta {
         console.log(`Número:  ${this.numero}`)
     }
 
-    public saldo(): number {
+    get saldo(): number { // transforma o resultado em uma propriedade
         return this.saldoConta
+    }
+
+    set saldo(sladoConta: number) { // trasforma saldo em uma variavel, podendo mudar seu valor
+        this.saldoConta = this.saldoConta
     }
 
     protected deposito(valor: number): void {
@@ -110,10 +117,10 @@ class ContaPJ extends Conta {
 const conta01 = new ContaPF('Fellipe', 12345678900)
 const conta02 = new ContaPJ('João', 12345678900)
 
-conta01.deposito(700)
-console.log(conta01.saldo())
-conta01.saque(700)
-console.log(conta01.saldo())
+conta01.deposito(900)
+// conta01.saque(700)
+// conta01.saldo = 250 // o valor de saldo pode ser alterado
+console.log(conta01.saldo) // saldo agora é uma propriedade
 
 // conta02.deposito(10001)
 // console.log(conta02.saldo())

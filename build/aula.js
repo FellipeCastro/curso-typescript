@@ -15,8 +15,11 @@ class Conta {
         console.log(`Titular: ${this.titular}`);
         console.log(`Número:  ${this.numero}`);
     }
-    saldo() {
+    get saldo() {
         return this.saldoConta;
+    }
+    set saldo(sladoConta) {
+        this.saldoConta = this.saldoConta;
     }
     deposito(valor) {
         if (valor < 0) {
@@ -98,7 +101,5 @@ class ContaPJ extends Conta {
 }
 const conta01 = new ContaPF('Fellipe', 12345678900);
 const conta02 = new ContaPJ('João', 12345678900);
-conta01.deposito(700);
-console.log(conta01.saldo());
-conta01.saque(700);
-console.log(conta01.saldo());
+conta01.deposito(900);
+console.log(conta01.saldo);
