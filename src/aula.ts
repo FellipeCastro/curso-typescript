@@ -1,13 +1,22 @@
 interface curso {
     titulo: string
     descricao: string
+    iniciarCurso?(teste: string): void
+}
+
+interface cursoProgramacao extends curso {
     aula: number 
     maxAlunos?: number // deixando essa opção opcional
 }
 
-let curso01: curso
-let curso02: curso
-let curso03: curso
+interface cursoArtes extends curso {
+    aula: number 
+    maxAlunos?: number // deixando essa opção opcional
+}
+
+let curso01: cursoProgramacao
+let curso02: cursoArtes
+let curso03: cursoProgramacao
 
 curso01 = {
     titulo: 'Typescript',
