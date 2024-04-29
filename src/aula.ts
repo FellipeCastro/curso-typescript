@@ -1,21 +1,7 @@
-function teste<T, U>(valor: T, r: U): U {
-    return r
-}
+import { Objeto, Pessoa } from './Classes'
 
-console.log(teste<number, string>(12, 'Olá'))
-console.log(teste<string, number>('Olá mundo', 10))
-console.log(teste<boolean, boolean>(true, false))
+const pessoa01 = new Pessoa('Fellipe', 1.80)
+const objeto01 = new Objeto('Mesa')
 
-class ClassTeste<T> {
-    public valor: T
-
-    constructor(valor: T) {
-        this.valor = valor
-    }
-}
-
-const classTeste01 = new ClassTeste<number>(10)
-const classTeste02 = new ClassTeste<string>('Olá mundo')
-
-console.log(classTeste01.valor)
-console.log(classTeste02.valor)
+console.log(pessoa01)
+console.log(objeto01)
