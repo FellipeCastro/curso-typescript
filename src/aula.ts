@@ -1,43 +1,21 @@
-interface curso {
-    titulo: string
-    descricao: string
-    iniciarCurso?(teste: string): void
+function teste<T, U>(valor: T, r: U): U {
+    return r
 }
 
-interface cursoProgramacao extends curso {
-    aula: number 
-    maxAlunos?: number // deixando essa opção opcional
+console.log(teste<number, string>(12, 'Olá'))
+console.log(teste<string, number>('Olá mundo', 10))
+console.log(teste<boolean, boolean>(true, false))
+
+class ClassTeste<T> {
+    public valor: T
+
+    constructor(valor: T) {
+        this.valor = valor
+    }
 }
 
-interface cursoArtes extends curso {
-    aula: number 
-    maxAlunos?: number // deixando essa opção opcional
-}
+const classTeste01 = new ClassTeste<number>(10)
+const classTeste02 = new ClassTeste<string>('Olá mundo')
 
-let curso01: cursoProgramacao
-let curso02: cursoArtes
-let curso03: cursoProgramacao
-
-curso01 = {
-    titulo: 'Typescript',
-    descricao: 'Curso de Typescript',
-    aula: 100, 
-    maxAlunos: 50
-}
-
-curso02 = {
-    titulo: 'Javascript',
-    descricao: 'Curso de Javascript',
-    aula: 200,
-    maxAlunos: 80
-}
-
-curso03 = {
-    titulo: 'C++',
-    descricao: 'Curso de C++',
-    aula: 170
-}
-
-console.log(curso01)
-console.log(curso02)
-console.log(curso03)
+console.log(classTeste01.valor)
+console.log(classTeste02.valor)
