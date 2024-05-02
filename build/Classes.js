@@ -1,6 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Objeto = exports.Pessoa = void 0;
+exports.Objeto = exports.Coisas = void 0;
+const Coisas = ['corda', 'pilha', 'lâmpada', 'chave'];
+exports.Coisas = Coisas;
 class Pessoa {
     nome;
     altura;
@@ -9,7 +11,6 @@ class Pessoa {
         this.altura = altura;
     }
 }
-exports.Pessoa = Pessoa;
 class Objeto {
     nome;
     constructor(nome) {
@@ -17,3 +18,4 @@ class Objeto {
     }
 }
 exports.Objeto = Objeto;
+exports.default = Pessoa;
