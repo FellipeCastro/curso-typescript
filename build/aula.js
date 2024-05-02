@@ -1,12 +1,32 @@
 "use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-const Classes_1 = __importDefault(require("./Classes"));
-const Classes_2 = require("./Classes");
-const pessoa01 = new Classes_1.default('Fellipe', 1.80);
-const objeto01 = new Classes_2.Objeto('Mesa');
-console.log(pessoa01);
-console.log(objeto01);
-console.log(Classes_2.Coisas);
+var Veiculos;
+(function (Veiculos) {
+    class Carro {
+        nome;
+        motor;
+        constructor(nome) {
+            this.nome = nome;
+            this.motor = new Motores.Motor(100);
+        }
+    }
+    Veiculos.Carro = Carro;
+})(Veiculos || (Veiculos = {}));
+var Motores;
+(function (Motores) {
+    class Turbo {
+        potencia;
+        constructor(potencia) {
+            this.potencia = potencia;
+        }
+    }
+    class Motor {
+        potencia;
+        constructor(potencia) {
+            this.potencia = potencia;
+        }
+    }
+    Motores.Motor = Motor;
+})(Motores || (Motores = {}));
+const carro01 = new Veiculos.Carro('Rapidão');
+console.log(carro01.nome);
+console.log(carro01.motor);
