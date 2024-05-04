@@ -1,3 +1,4 @@
+// namespace é usado para separar um certo tipo de classes
 namespace Veiculos {
     export class Carro { // export para permitir que a classe seja usada fora do namespace
         nome: string
