@@ -6,30 +6,45 @@ namespace Veiculos {
     
         constructor(nome: string) {
             this.nome = nome
-            this.motor = new Motores.Motor(100)
+            this.motor = new Motores.Motor(3, 100)
         }
     }    
 }
 
 namespace Motores {
     class Turbo {
-        potencia: number
+        private potencia: number
     
         constructor(potencia: number) {
             this.potencia = potencia
+        }
+
+        get getPotencia() {
+            return this.potencia
         }
     }
     
     export class Motor { // export para permitir que a classe seja usada fora do namespace
-        potencia: number
+        private ligado: boolean
+        private cilindros:number
+        private potencia: number
     
-        constructor(potencia: number) {
-            this.potencia = potencia
+        constructor(cilindros: number, potencia: number, turbo?: Turbo) {
+            this.ligado = false
+            this.cilindros = cilindros
+            this.potencia = potencia + (turbo ? turbo.getPotencia : 0)
         }
-    }    
-}
 
-// chamando a classe Carro que esta dendro de Veiculos
-const carro01 = new Veiculos.Carro('Rapidão')
-console.log(carro01.nome)
-console.log(carro01.motor)
+        set ligar(ligado: boolean) {
+            this.ligado = ligado
+        }
+
+        get ligar() {
+            return this.ligado
+        }
+
+        get getPotencia() {
+            return this.potencia
+        }
+    }
+}
