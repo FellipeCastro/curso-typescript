@@ -29,6 +29,7 @@ namespace Motores {
     }    
 }
 
+// chamando a classe Carro que esta dendro de Veiculos
 const carro01 = new Veiculos.Carro('Rapidão')
 console.log(carro01.nome)
 console.log(carro01.motor)
