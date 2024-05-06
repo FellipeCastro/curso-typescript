@@ -1,107 +1,24 @@
-// namespace é usado para separar um certo tipo de classes
-namespace Veiculos {
-    enum Cores{'Preto', 'Branco', 'Vermelho', 'Amarelo', 'Azul', 'Prata'}
+let valores = [10, 20, 30, 40]
 
-    abstract class Carro { // export para permitir que a classe seja usada fora do namespace
-         private nome: string
-         private motor: Motores.Motor
-         private cor: String
+// let a, b, c, d
+// a = valores[0]
+// b = valores[1]
+// c = valores[2]
+// d = valores[3]
 
-        constructor(nome: string, motor:Motores.Motor, cor: Cores) {
-            this.nome = nome
-            this.motor = motor
-            this.cor = Cores[cor]
-        }
+// let [a, b, c, d] = valores
+// let [a, b, c, d] = [10, 20, 30, 40]
 
-        public ligar() {
-            this.motor.ligar = true
-        }
-
-        public desligar() {
-            this.motor.ligar = false
-        }
-
-        get minhaCor() {
-            return this.cor
-        }
-
-        get meuNome() {
-            return this.nome
-        }
-
-        get estouLigado() {
-            return (this.motor.ligar ? 'Sim' : 'Não')
-        }
-
-        get minhaPotencia() {
-            return this.motor.getPotencia
-        }
-    }
-    
-    export class CarroEsportivo extends Carro {
-        constructor(nome:string, cor:Cores) {
-            super(nome, new Motores.Motor(6, 300, new Motores.Turbo(100)), cor) // criando um carro com turbo, ouseja, a potencia sera maior
-        }
-    }
-
-    export class CarroPopular extends Carro {
-        constructor(nome:string, cor:Cores) {
-            super(nome, new Motores.Motor(3, 100), cor) // turbo é opcional, ou seja, o carro pode não ter
-        }
-    }
+const obj = {
+    cor01: 'Verde',
+    cor02: 'Amarelo',
+    cor03: 'Azul',
+    cor04: 'Vermelho',
 }
 
-namespace Motores {
-    export class Turbo {
-        private potencia: number
-    
-        constructor(potencia: number) {
-            this.potencia = potencia
-        }
+let {cor01, cor02, cor03, cor04} = obj
 
-        get getPotencia() {
-            return this.potencia
-        }
-    }
-    
-    export class Motor { // export para permitir que a classe seja usada fora do namespace
-        private ligado: boolean
-        private cilindros:number
-        private potencia: number
-    
-        constructor(cilindros: number, potencia: number, turbo?: Turbo) {
-            this.ligado = false
-            this.cilindros = cilindros
-            this.potencia = potencia + (turbo ? turbo.getPotencia : 0)
-        }
-
-        set ligar(ligado: boolean) {
-            this.ligado = ligado
-        }
-
-        get ligar() {
-            return this.ligado
-        }
-
-        get getPotencia() {
-            return this.potencia
-        }
-    }
-}
-
-const carro01 = new Veiculos.CarroEsportivo('Rapidão', 2)
-const carro02 = new Veiculos.CarroPopular('Popular', 4)
-
-carro01.ligar()
-
-console.log('')
-console.log(`Nome:     ${carro01.meuNome}`)
-console.log(`Cor:      ${carro01.minhaCor}`)
-console.log(`Potencia: ${carro01.minhaPotencia}`)
-console.log(`Ligado:   ${carro01.estouLigado}`)
-
-console.log('')
-console.log(`Nome:     ${carro02.meuNome}`)
-console.log(`Cor:      ${carro02.minhaCor}`)
-console.log(`Potencia: ${carro02.minhaPotencia}`)
-console.log(`Ligado:   ${carro02.estouLigado}`)
+console.log(cor01)
+console.log(cor02)
+console.log(cor03)
+console.log(cor04)
